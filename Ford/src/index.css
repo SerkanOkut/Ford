@@ -1,31 +1,10 @@
 @import "tailwindcss";
 /* Özel bileşen stilleri */
-@layer components {
-  .product-card {
-    @apply bg-white rounded-lg shadow-md p-4 transition-transform transform hover:scale-105;
-  }
 
-  .product-image {
-    @apply w-64 h-64 object-cover rounded;
-  }
-
-  .product-title {
-    @apply text-xl font-semibold mt-2;
-  }
-
-  .product-price {
-    @apply text-gray-500;
-  }
-
-  .add-to-cart-btn {
-    @apply mt-4 bg-blue-600 text-white py-2 px-4 rounded w-full hover:bg-blue-700;
-  }
-
-  .header-section {
-    @apply bg-blue-600 text-white py-6 text-center;
-  }
-
-  .footer-section {
-    @apply bg-gray-800 text-white text-center p-4 mt-6;
-  }
+a {
+  text-decoration: none !important;
+  color: inherit !important;
+}
+.contact-navbar a {
+  color: white !important;
 }
