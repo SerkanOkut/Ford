@@ -55,7 +55,7 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Get In Touch */}
+        {/* Get In Touchs */}
         <div className="mt-10 max-w-md">
           <h3 className="text-lg font-bold text-gray-900">Get In Touch</h3>
           <div className="mt-4 flex border rounded-lg overflow-hidden">
