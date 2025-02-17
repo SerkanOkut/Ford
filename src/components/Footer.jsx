@@ -3,78 +3,70 @@ import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-50 py-10 px-6">
-      <div className="container mx-auto text-left">
-        {/* Logo & Social Media */}
-        <div>
-          <h2 className="text-2xl font-bold text-gray-900">Bandage</h2>
-          <div className="flex space-x-4 mt-4">
-            <a href="#" className="text-blue-500 text-2xl"><FaFacebook /></a>
-            <a href="#" className="text-blue-500 text-2xl"><FaInstagram /></a>
-            <a href="#" className="text-blue-500 text-2xl"><FaTwitter /></a>
+    <footer className="bg-gray-100 p-6 md:p-12">
+      <div className="max-w-7xl mx-auto">
+        {/* Social Media and Logo */}
+        <div className="flex flex-col md:flex-row md:justify-between items-start md:items-center">
+          <h2 className="text-xl font-bold">Bandage</h2>
+          <div className="flex space-x-4 mt-4 md:mt-0 md:self-start">
+            <a href="#" className="text-blue-500 text-xl"><FaFacebook /></a>
+            <a href="#" className="text-pink-500 text-xl"><FaInstagram /></a>
+            <a href="#" className="text-blue-400 text-xl"><FaTwitter /></a>
           </div>
         </div>
 
-        {/* Footer Sections */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-6">
-          <div>
-            <h3 className="text-lg font-bold text-gray-900">Company Info</h3>
-            <ul className="mt-4 space-y-2">
-              <li><a href="#" className="text-gray-700 no-underline hover:text-gray-900">About Us</a></li>
-              <li><a href="#" className="text-gray-700 no-underline hover:text-gray-900">Carrier</a></li>
-              <li><a href="#" className="text-gray-700 no-underline hover:text-gray-900">We are hiring</a></li>
-              <li><a href="#" className="text-gray-700 no-underline hover:text-gray-900">Blog</a></li>
+        {/* Footer Content */}
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-4 md:gap-2 mt-8 text-gray-700">
+          <div className="text-left">
+            <h3 className="font-semibold">Company Info</h3>
+            <ul className="mt-2 space-y-1">
+              <li>About Us</li>
+              <li>Carrier</li>
+              <li>We are hiring</li>
+              <li>Blog</li>
             </ul>
           </div>
-          <div>
-            <h3 className="text-lg font-bold text-gray-900">Legal</h3>
-            <ul className="mt-4 space-y-2">
-              <li><a href="#" className="text-gray-700 no-underline hover:text-gray-900">About Us</a></li>
-              <li><a href="#" className="text-gray-700 no-underline hover:text-gray-900">Carrier</a></li>
-              <li><a href="#" className="text-gray-700 no-underline hover:text-gray-900">We are hiring</a></li>
-              <li><a href="#" className="text-gray-700 no-underline hover:text-gray-900">Blog</a></li>
+          <div className="text-left">
+            <h3 className="font-semibold">Legal</h3>
+            <ul className="mt-2 space-y-1">
+              <li>About Us</li>
+              <li>Carrier</li>
+              <li>We are hiring</li>
+              <li>Blog</li>
             </ul>
           </div>
-          <div>
-            <h3 className="text-lg font-bold text-gray-900">Features</h3>
-            <ul className="mt-4 space-y-2">
-              <li><a href="#" className="text-gray-700 no-underline hover:text-gray-900">Business Marketing</a></li>
-              <li><a href="#" className="text-gray-700 no-underline hover:text-gray-900">User Analytics</a></li>
-              <li><a href="#" className="text-gray-700 no-underline hover:text-gray-900">Live Chat</a></li>
-              <li><a href="#" className="text-gray-700 no-underline hover:text-gray-900">Unlimited Support</a></li>
+          <div className="text-left">
+            <h3 className="font-semibold">Features</h3>
+            <ul className="mt-2 space-y-1">
+              <li>Business Marketing</li>
+              <li>User Analytic</li>
+              <li>Live Chat</li>
+              <li>Unlimited Support</li>
             </ul>
           </div>
-          <div>
-            <h3 className="text-lg font-bold text-gray-900">Resources</h3>
-            <ul className="mt-4 space-y-2">
-              <li><a href="#" className="text-gray-700 no-underline hover:text-gray-900">IOS & Android</a></li>
-              <li><a href="#" className="text-gray-700 no-underline hover:text-gray-900">Watch a Demo</a></li>
-              <li><a href="#" className="text-gray-700 no-underline hover:text-gray-900">Customers</a></li>
-              <li><a href="#" className="text-gray-700 no-underline hover:text-gray-900">API</a></li>
+          <div className="text-left">
+            <h3 className="font-semibold">Resources</h3>
+            <ul className="mt-2 space-y-1">
+              <li>IOS & Android</li>
+              <li>Watch a Demo</li>
+              <li>Customers</li>
+              <li>API</li>
             </ul>
+          </div>
+          <div className="text-left">
+            <h3 className="font-semibold">Get In Touch</h3>
+            <div className="mt-2 flex border border-gray-300 rounded-md overflow-hidden w-full">
+              <input type="email" placeholder="Your Email" className="p-2 flex-grow w-1/2" />
+              <button className="bg-blue-500 text-white px-6 py-2 w-1/2 text-center">Subscribe</button>
+            </div>
+            <p className="text-xs text-gray-500 mt-2">Lorem imp sum dolor Amit</p>
           </div>
         </div>
 
-        {/* Get In Touch */}
-        <div className="mt-10 max-w-md">
-          <h3 className="text-lg font-bold text-gray-900">Get In Touch</h3>
-          <div className="mt-4 flex border rounded-lg overflow-hidden">
-            <input
-              type="email"
-              placeholder="Your Email"
-              className="w-full px-4 py-2 focus:outline-none border-r"
-            />
-            <button className="bg-blue-500 text-white px-6 py-2 font-semibold hover:bg-blue-600">
-              Subscribe
-            </button>
-          </div>
-          <p className="text-gray-500 text-sm mt-2">Lore imp sum dolor Amit</p>
+        {/* Footer Bottom */}
+        <div className="mt-8 text-center text-gray-600 text-sm">
+          Made With Love By Finland All Right Reserved
         </div>
-      </div>
-
-      {/* Footer Bottom */}
-      <div className="mt-10 pt-6 text-gray-500 text-sm text-center">
-        <p>Made With Love By Finland All Right Reserved</p>
       </div>
     </footer>
   );
