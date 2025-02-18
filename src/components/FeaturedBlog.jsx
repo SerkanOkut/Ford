@@ -32,15 +32,15 @@ const FeaturedBlog = () => {
     <section className="container mx-auto py-16 px-6">
       {/* Başlık */}
       <p className="text-blue-500 uppercase text-center font-semibold">Practice Advice</p>
-      <h2 className="text-3xl md:text-5xl font-bold text-gray-900 text-center">Featured Products</h2>
+      <h2 className="text-3xl md:text-5xl font-bold text-gray-900 text-center">Featured Posts</h2>
       <p className="text-gray-600 max-w-md mx-auto text-center mt-2">
-        Problems trying to resolve the conflict between the two major
+        Problems trying to resolve the conflict between the two major realms of Classical physics: Newtonian mechanics
       </p>
       
       {/* Blog Kartları */}
-      <div className="flex flex-col gap-8 mt-10">
+      <div className="flex flex-col md:flex-row md:gap-6 md:justify-center md:items-start mt-10">
         {blogPosts.map((post, index) => (
-          <div key={index} className="bg-white rounded-lg shadow-lg overflow-hidden">
+          <div key={index} className="bg-white rounded-lg shadow-lg overflow-hidden md:w-1/3">
             <div className="relative">
               <img src={post.image} alt={post.title} className="w-full h-auto" />
               <span className="absolute top-3 left-3 bg-red-500 text-white text-xs px-3 py-1 rounded-lg font-semibold">
