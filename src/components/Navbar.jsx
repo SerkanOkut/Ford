@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { FaUser, FaSearch, FaShoppingCart, FaBars } from "react-icons/fa";
+import { useHistory } from "react-router-dom"; // Sayfa yönlendirme için
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const history = useHistory(); // Sayfa yönlendirme fonksiyonu
 
   return (
     <nav className="bg-white shadow-md py-4 px-6 fixed w-full top-0 left-0 z-50 md:hidden">
@@ -12,7 +14,13 @@ const Navbar = () => {
 
         {/* Icons & Menu Button */}
         <div className="flex items-center space-x-4">
-          <FaUser className="text-gray-700 text-xl" />
+          {/* Kullanıcı ikonuna basınca signup sayfasına yönlendirme */}
+          <button
+            onClick={() => history.push("/signup")}
+            className="text-gray-700 text-xl hover:text-blue-500"
+          >
+            <FaUser />
+          </button>
           <FaSearch className="text-gray-700 text-xl" />
           <FaShoppingCart className="text-gray-700 text-xl" />
           <button

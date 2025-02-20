@@ -1,9 +1,10 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 import { FaUser, FaSearch, FaShoppingCart, FaHeart, FaChevronDown } from "react-icons/fa";
-
+import SignupPage from "../pages/SignupPage";
 const WebNavbar = () => {
   const [isShopOpen, setIsShopOpen] = useState(false);
-
+  const history = useHistory();
   return (
     <nav className="hidden md:flex flex-col bg-white shadow-md fixed top-0 left-0 w-full z-50">
       {/* Main Navbar */}
@@ -55,9 +56,12 @@ const WebNavbar = () => {
 
         {/* Right Side */}
         <div className="hidden md:flex items-center space-x-6">
-          <a href="#" className="flex items-center text-blue-500 hover:text-blue-700">
+        <button
+            onClick={() => history.push("/signup")}
+            className="flex items-center text-gray-900 hover:text-blue-700"
+          >
             <FaUser className="mr-1" /> Login / Register
-          </a>
+          </button>
           <FaSearch className="text-gray-700 text-lg cursor-pointer hover:text-blue-500" />
           <div className="relative cursor-pointer">
             <FaShoppingCart className="text-gray-700 text-lg hover:text-blue-500" />
