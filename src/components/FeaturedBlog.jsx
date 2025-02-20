@@ -34,7 +34,7 @@ const FeaturedBlog = () => {
       <p className="text-blue-500 uppercase text-center font-semibold">Practice Advice</p>
       <h2 className="text-3xl md:text-5xl font-bold text-gray-900 text-center">Featured Posts</h2>
       <p className="text-gray-600 max-w-md mx-auto text-center mt-2">
-        Problems trying to resolve the conflict between the two major
+        Problems trying to resolve the conflict between the two major realms of Classical physics: Newtonian mechanics
       </p>
       
       {/* Blog Kartları */}
