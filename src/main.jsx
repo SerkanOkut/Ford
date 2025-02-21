@@ -7,7 +7,7 @@ import './index.css';
 import 'tailwindcss';
 import store from './store';
 
-
+/*nabzım 180*/
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
