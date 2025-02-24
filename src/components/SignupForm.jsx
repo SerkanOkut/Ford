@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import axios from "axios";
-import { useHistory } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
 
 const SignupForm = () => {
     const {
@@ -199,11 +199,20 @@ const SignupForm = () => {
       {/* Submit Butonu */}
       <button
         type="submit"
-        className="mt-6 w-full bg-blue-500 text-white p-2 rounded font-bold hover:bg-blue-600 disabled:opacity-50"
         disabled={isSubmitting}
+        className="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600 mt-4"
       >
-        {isSubmitting ? "Submitting..." : "Sign Up"}
+        {isSubmitting ? "Signing up..." : "Sign Up"}
       </button>
+
+      <div className="text-center mt-4">
+        <p className="text-gray-600">
+          Already have an account?{" "}
+          <Link to="/login" className="text-blue-500 hover:text-blue-700">
+            Login
+          </Link>
+        </p>
+      </div>
     </form>
   );
 };

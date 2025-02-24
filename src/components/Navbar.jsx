@@ -10,7 +10,7 @@ const Navbar = () => {
     <nav className="bg-white shadow-md py-4 px-6 fixed w-full top-0 left-0 z-50 md:hidden">
       <div className="container mx-auto flex justify-between items-center">
         {/* Logo */}
-        <h1 className="text-2xl font-bold text-gray-900">Bandage</h1>
+        <h1 className="text-2xl font-bold text-gray-900">SeCom</h1>
 
         {/* Icons & Menu Button */}
         <div className="flex items-center space-x-4">
