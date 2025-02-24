@@ -1,0 +1,142 @@
+# Ford Project Windsurf Rules
+# Last updated: 2025-02-24
+
+# File Organization
+src/
+Directory structure:
+└── serkanokut-ford/
+    ├── README.md
+    ├── eslint.config.js
+    ├── index.html
+    ├── package.json
+    ├── tailwind.config.js
+    ├── vite.config.js
+    ├── public/
+    │   └── images/
+    └── src/
+        ├── App.css
+        ├── App.jsx
+        ├── index.css
+        ├── main.jsx
+        ├── assets/
+        │   └── images/
+        ├── components/
+        │   ├── ContactNavbar.jsx
+        │   ├── FeaturedBlog.jsx
+        │   ├── FeaturedProductCarousel.jsx
+        │   ├── Footer.jsx
+        │   ├── HeroCarousel.jsx
+        │   ├── Navbar.jsx
+        │   ├── ProductCards.jsx
+        │   ├── PromotionContainer.jsx
+        │   ├── ShopCards.jsx
+        │   ├── SignupForm.jsx
+        │   └── WebNavbar.jsx
+        ├── context/
+        │   └── GlobalContext.jsx
+        ├── pages/
+        │   ├── HomePage.jsx
+        │   └── SignupPage.jsx
+        ├── reducers/
+        │   └── index.jsx
+        ├── redux/
+        │   ├── actions/
+        │   │   ├── clientActions.js
+        │   │   ├── productActions.js
+        │   │   └── shoppingCardActions.js
+        │   └── reducers/
+        │       ├── clientReducer.js
+        │       ├── productReducer.js
+        │       └── shoppingCartReducer.js
+        └── store/
+            └── index.jsx
+
+
+# Code Style Rules
+## General
+- Use 2 spaces for indentation
+- Maximum line length: 100 characters
+- Use semicolons at the end of statements
+- Use single quotes for strings
+- Add trailing commas in multiline objects/arrays
+
+## React Components
+- Use functional components with hooks
+- Component files should use .jsx extension
+- One component per file
+- Use PascalCase for component names
+- Props should be typed with PropTypes or TypeScript
+
+## State Management
+- Use Redux for global state management
+- Use React Context for theme/auth state
+- Keep Redux actions and reducers organized by feature
+
+## CSS/Styling
+- Use Tailwind CSS for styling
+- Follow mobile-first responsive design
+- Maintain consistent color scheme from design system
+
+## Testing
+- Write unit tests for components
+- Write integration tests for critical user flows
+- Maintain minimum 80% test coverage
+
+## Git Practices
+- Use feature branches
+- Write descriptive commit messages
+- Follow conventional commits format
+- Squash commits before merging
+
+## Dependencies
+- Keep dependencies updated
+- Use exact versions in package.json
+- Review security vulnerabilities regularly
+
+## Performance
+- Implement code splitting
+- Optimize images and assets
+- Use React.memo for expensive components
+- Implement proper lazy loading
+
+## Documentation
+- Document complex functions
+- Include README updates with new features
+- Document API integrations
+- Keep comments relevant and updated
+
+## Security
+- Implement proper authentication
+- Sanitize user inputs
+- Use environment variables for sensitive data
+- Regular security audits
+
+## Build and Deploy
+- Use Vite for development and building
+- Optimize build output
+- Implement proper error boundaries
+- Use proper environment configurations
+
+## Code Quality
+- Run ESLint before commits
+- Maintain consistent code formatting
+- Regular dependency updates
+- Code review requirements
+
+## Accessibility
+- Implement ARIA labels
+- Ensure keyboard navigation
+- Maintain color contrast ratios
+- Test with screen readers
+
+## Error Handling
+- Implement global error boundary
+- Log errors appropriately
+- User-friendly error messages
+- Graceful fallbacks
+
+## Performance Monitoring
+- Implement performance metrics
+- Monitor bundle size
+- Track user interactions
+- Regular performance audits
