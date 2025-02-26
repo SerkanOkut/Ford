@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 
 
@@ -107,7 +107,7 @@ const ShopProductCards = () => {
   });
 
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="container mx-auto px-4 py-20">
       {/* Filtreleme Alanı */}
       <div className="flex flex-col sm:flex-row justify-between items-center mb-6 gap-4">
         <select
