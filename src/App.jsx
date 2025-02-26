@@ -8,6 +8,7 @@ import { useDispatch } from 'react-redux';
 import HomePage from './pages/HomePage';
 import SignupPage from './pages/SignupPage';
 import LoginPage from './pages/LoginPage';
+import ShopPage from './pages/ShopPage';
 import { checkAuthStatus } from './redux/actions/clientActions';
 
 const App = () => {
@@ -24,6 +25,7 @@ const App = () => {
         <Route exact path="/" component={HomePage} />
         <Route path="/signup" component={SignupPage} />
         <Route path="/login" component={LoginPage} />
+        <Route path="/shop" component={ShopPage} />
       </Switch>
     </>
   );

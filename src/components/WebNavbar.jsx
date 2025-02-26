@@ -42,19 +42,19 @@ const WebNavbar = () => {
                   <div>
                     <h4 className="font-bold text-gray-900 mb-4 ">Kadın</h4>
                     <ul className="space-y-3 text-gray-700">
-                      <li className="hover:text-blue-500"><a href="#">Bags</a></li>
-                      <li className="hover:text-blue-500"><a href="#">Belts</a></li>
-                      <li className="hover:text-blue-500"><a href="#">Cosmetics</a></li>
+                      <li className="hover:text-blue-500"><a href="#">Tshirt</a></li>
+                      <li className="hover:text-blue-500"><a href="#">Jeans</a></li>
                       <li className="hover:text-blue-500"><a href="#">Hats</a></li>
+                      <li className="hover:text-blue-500"><a href="#">Jewellery</a></li>
                     </ul>
                   </div>
                   <div>
                     <h4 className="font-bold text-gray-900 mb-4">Erkek</h4>
                     <ul className="space-y-3 text-gray-700">
-                      <li className="hover:text-blue-500"><a href="#">Bags</a></li>
-                      <li className="hover:text-blue-500"><a href="#">Belts</a></li>
-                      <li className="hover:text-blue-500"><a href="#">Cosmetics</a></li>
+                      <li className="hover:text-blue-500"><a href="#">Tshirt</a></li>
+                      <li className="hover:text-blue-500"><a href="#">Jeans</a></li>
                       <li className="hover:text-blue-500"><a href="#">Hats</a></li>
+                      <li className="hover:text-blue-500"><a href="#">Jewellery</a></li>
                     </ul>
                   </div>
                 </div>
