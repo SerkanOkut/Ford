@@ -1,14 +1,12 @@
 import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
 import { useSelector, useDispatch } from 'react-redux';
-import { Link } from 'react-router-dom';
 import md5 from 'md5';
 import { logoutUser } from '../redux/actions/clientActions';
 import { FaUser, FaSearch, FaShoppingCart, FaHeart, FaChevronDown } from "react-icons/fa";
-import SignupPage from "../pages/SignupPage";
 
 const WebNavbar = () => {
-  const [isShopOpen, setIsShopOpen] = useState(false);
+  const [isShopMenuOpen, setIsShopMenuOpen] = useState(false);
   const history = useHistory();
   const user = useSelector(state => state.client.user);
   const dispatch = useDispatch();
@@ -27,44 +25,59 @@ const WebNavbar = () => {
 
         {/* Menu */}
         <ul className="md:flex space-x-6 text-gray-700 font-medium">
-          <li className="hover:text-blue-500"><a href="#">Home</a></li>
-          <li className="relative hover:text-blue-500">
-            <div
-              className="flex items-center space-x-1 cursor-pointer"
-              onClick={() => setIsShopOpen(!isShopOpen)}
-            >
-              <span>Shop</span>
-              <FaChevronDown className="text-xs" />
+          <li>
+            <Link to="/" className="hover:text-blue-500">Home</Link>
+          </li>
+          <li 
+            className="relative"
+            onMouseEnter={() => setIsShopMenuOpen(true)}
+            onMouseLeave={() => setIsShopMenuOpen(false)}
+          >
+            <div className="flex items-center cursor-pointer">
+              <Link 
+                to="/shop" 
+                className="hover:text-blue-500 flex items-center"
+                onClick={(e) => {
+                  e.preventDefault();
+                  history.push('/shop');
+                  setIsShopMenuOpen(false);
+                }}
+              >
+                Shop
+                <FaChevronDown className="ml-1" />
+              </Link>
             </div>
-            {isShopOpen && (
-              <div className="absolute left-0 top-full mt-1 w-96 bg-white shadow-lg border border-gray-300 p-6 transition-all duration-300 ease-in-out z-50">
-                <div className="grid grid-cols-2 gap-10">
+
+            {/* Shop Dropdown Menu */}
+            {isShopMenuOpen && (
+              <div className="absolute top-full left-0 w-[600px] bg-white shadow-lg rounded-lg p-6 mt-2">
+                <div className="grid grid-cols-2 gap-8">
                   <div>
-                    <h4 className="font-bold text-gray-900 mb-4 ">Kadın</h4>
+                    <h4 className="font-bold text-gray-900 mb-4">Kadın</h4>
                     <ul className="space-y-3 text-gray-700">
-                      <li className="hover:text-blue-500"><a href="#">Tshirt</a></li>
-                      <li className="hover:text-blue-500"><a href="#">Jeans</a></li>
-                      <li className="hover:text-blue-500"><a href="#">Hats</a></li>
-                      <li className="hover:text-blue-500"><a href="#">Jewellery</a></li>
+                      <li className="hover:text-blue-500"><Link to="/shop?category=tshirt&gender=women">Tshirt</Link></li>
+                      <li className="hover:text-blue-500"><Link to="/shop?category=jeans&gender=women">Jeans</Link></li>
+                      <li className="hover:text-blue-500"><Link to="/shop?category=hats&gender=women">Hats</Link></li>
+                      <li className="hover:text-blue-500"><Link to="/shop?category=jewellery&gender=women">Jewellery</Link></li>
                     </ul>
                   </div>
                   <div>
                     <h4 className="font-bold text-gray-900 mb-4">Erkek</h4>
                     <ul className="space-y-3 text-gray-700">
-                      <li className="hover:text-blue-500"><a href="#">Tshirt</a></li>
-                      <li className="hover:text-blue-500"><a href="#">Jeans</a></li>
-                      <li className="hover:text-blue-500"><a href="#">Hats</a></li>
-                      <li className="hover:text-blue-500"><a href="#">Jewellery</a></li>
+                      <li className="hover:text-blue-500"><Link to="/shop?category=tshirt&gender=men">Tshirt</Link></li>
+                      <li className="hover:text-blue-500"><Link to="/shop?category=jeans&gender=men">Jeans</Link></li>
+                      <li className="hover:text-blue-500"><Link to="/shop?category=hats&gender=men">Hats</Link></li>
+                      <li className="hover:text-blue-500"><Link to="/shop?category=jewellery&gender=men">Jewellery</Link></li>
                     </ul>
                   </div>
                 </div>
               </div>
             )}
           </li>
-          <li className="hover:text-blue-500"><a href="#">About</a></li>
-          <li className="hover:text-blue-500"><a href="#">Blog</a></li>
-          <li className="hover:text-blue-500"><a href="#">Contact</a></li>
-          <li className="hover:text-blue-500"><a href="#">Pages</a></li>
+          <li className="hover:text-blue-500"><Link to="/about">About</Link></li>
+          <li className="hover:text-blue-500"><Link to="/blog">Blog</Link></li>
+          <li className="hover:text-blue-500"><Link to="/contact">Contact</Link></li>
+          <li className="hover:text-blue-500"><Link to="/pages">Pages</Link></li>
         </ul>
 
         {/* Right Side */}
