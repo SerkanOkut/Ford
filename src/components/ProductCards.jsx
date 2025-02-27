@@ -1,17 +1,24 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 
 const products = [
-  { name: "Graphic Design", category: "English Department", priceOld: "$16.48", priceNew: "$6.48", image: "/images/productcards1.jpg" },
-  { name: "Graphic Design", category: "English Department", priceOld: "$16.48", priceNew: "$6.48", image: "/images/productcards2.jpg" },
-  { name: "Graphic Design", category: "English Department", priceOld: "$16.48", priceNew: "$6.48", image: "/images/productcards3.jpg" },
-  { name: "Graphic Design", category: "English Department", priceOld: "$16.48", priceNew: "$6.48", image: "/images/productcards4.jpg" },
-  { name: "Graphic Design", category: "English Department", priceOld: "$16.48", priceNew: "$6.48", image: "/images/productcards5.jpg" },
-  { name: "Graphic Design", category: "English Department", priceOld: "$16.48", priceNew: "$6.48", image: "/images/productcards6.jpg" },
-  { name: "Graphic Design", category: "English Department", priceOld: "$16.48", priceNew: "$6.48", image: "/images/productcards7.jpg" },
-  { name: "Graphic Design", category: "English Department", priceOld: "$16.48", priceNew: "$6.48", image: "/images/productcards2.jpg" },
+  { id: 89, name: "Graphic Design", category: "English Department", priceOld: "$16.48", priceNew: "$6.48", image: "/images/productcards1.jpg" },
+  { id: 90, name: "Graphic Design", category: "English Department", priceOld: "$16.48", priceNew: "$6.48", image: "/images/productcards2.jpg" },
+  { id: 91, name: "Graphic Design", category: "English Department", priceOld: "$16.48", priceNew: "$6.48", image: "/images/productcards3.jpg" },
+  { id: 92, name: "Graphic Design", category: "English Department", priceOld: "$16.48", priceNew: "$6.48", image: "/images/productcards4.jpg" },
+  { id: 93, name: "Graphic Design", category: "English Department", priceOld: "$16.48", priceNew: "$6.48", image: "/images/productcards5.jpg" },
+  { id: 94, name: "Graphic Design", category: "English Department", priceOld: "$16.48", priceNew: "$6.48", image: "/images/productcards6.jpg" },
+  { id: 95, name: "Graphic Design", category: "English Department", priceOld: "$16.48", priceNew: "$6.48", image: "/images/productcards7.jpg" },
+  { id: 96, name: "Graphic Design", category: "English Department", priceOld: "$16.48", priceNew: "$6.48", image: "/images/productcards2.jpg" },
 ];
 
 const ProductCards = () => {
+  const history = useHistory();
+
+  const handleProductClick = (productId) => {
+    history.push(`/product/${productId}`);
+  };
+
   return (
     <section className="container mx-auto py-10 px-4">
       {/* Başlık */}
@@ -23,8 +30,12 @@ const ProductCards = () => {
 
       {/* Mobil Görünüm (Alt Alta) */}
       <div className="flex flex-col gap-10 mt-8 md:hidden">
-        {products.map((product, index) => (
-          <div key={index} className="relative w-full text-center">
+        {products.map((product) => (
+          <div 
+            key={product.id} 
+            className="relative w-full text-center cursor-pointer transition-transform hover:scale-105"
+            onClick={() => handleProductClick(product.id)}
+          >
             <img src={product.image} alt={product.name} className="w-full h-auto rounded-lg shadow-md" />
             <h4 className="mt-4 text-lg font-bold text-gray-900">{product.name}</h4>
             <p className="text-gray-500 text-sm">{product.category}</p>
@@ -44,9 +55,13 @@ const ProductCards = () => {
 
       {/* Web Görünüm (4x2 Grid) */}
       <div className="hidden md:grid grid-cols-4 gap-6 mt-10">
-        {products.map((product, index) => (
-          <div key={index} className="relative text-center shadow-md p-4 rounded-lg">
-            <img src={product.image} alt={product.name} className="w-full h-auto rounded-lg" />
+        {products.map((product) => (
+          <div
+            key={product.id}
+            className="relative text-center cursor-pointer transition-transform hover:scale-105"
+            onClick={() => handleProductClick(product.id)}
+          >
+            <img src={product.image} alt={product.name} className="w-full h-auto rounded-lg shadow-md" />
             <h4 className="mt-4 text-lg font-bold text-gray-900">{product.name}</h4>
             <p className="text-gray-500 text-sm">{product.category}</p>
             <div className="mt-2">
@@ -67,5 +82,3 @@ const ProductCards = () => {
 };
 
 export default ProductCards;
-
-

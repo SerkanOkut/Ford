@@ -9,8 +9,9 @@ import HomePage from './pages/HomePage';
 import SignupPage from './pages/SignupPage';
 import LoginPage from './pages/LoginPage';
 import ShopPage from './pages/ShopPage';
+import ProductDetailPage from './pages/ProductDetailPage';
 import { checkAuthStatus } from './redux/actions/clientActions';
-
+import ContactPage from './pages/ContactPage';
 const App = () => {
   const dispatch = useDispatch();
 
@@ -26,6 +27,8 @@ const App = () => {
         <Route path="/signup" component={SignupPage} />
         <Route path="/login" component={LoginPage} />
         <Route path="/shop" component={ShopPage} />
+        <Route path="/product/:id" component={ProductDetailPage} />
+        <Route path="/contact" component={ContactPage} />
       </Switch>
     </>
   );
